@@ -1,0 +1,14 @@
+def AVERAGE (_list):
+  '''a function that takes a string of numbers as input
+  returning the average after dividing the sum of the numbers by the lenght
+  '''
+  _list=_list.split(' ')
+  try:
+    _list=[int(i) for i in _list]
+    a=(sum(_list))/len(_list)
+    return a
+  except:
+    return 'invalid input'
+
+S= '1 7 9 6 10 11'
+print(AVERAGE(S))
