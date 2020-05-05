@@ -1,0 +1,37 @@
+def wedding_chow(string):
+    '''
+    taking a string as input,
+    we find the factor that has the min value and use it as basis of sharing 
+    returning how many can be shared and the left overs in a turple
+    '''
+    try:
+        string=list(string)
+        r_count=0
+        s_count=0
+        m_count=0
+        f_count=0
+        d_count=0
+        for i in string:
+            if i =='r':
+                r_count=r_count+1
+            elif i=='s':
+                s_count=s_count+1
+            elif i=='m':
+                m_count=m_count+1
+            elif i=='f':
+                f_count=f_count+1
+            elif i=='d':
+                d_count=d_count+1
+            
+        count=[r_count,s_count,m_count,f_count,d_count]
+        _min=min(count)
+        left='r'*(r_count-_min),'s'*(s_count-_min),'m'*(m_count-_min),'f'*(f_count-_min),'d'*(d_count-_min)
+        left=''.join(left)
+        ans=(_min,left)
+        return(ans)
+    except:
+        return 'only strings can be used as input'
+    
+    
+    
+print(wedding_chow('rsmfdrsmfdrsm'))
